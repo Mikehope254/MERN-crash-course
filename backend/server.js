@@ -7,9 +7,12 @@ dotenv.config();
 
 const app = express();
 
-app.post("/products", async (req, res) => {
+app.use(express.json()); //allows us to accept JSON data in the req.body (middleware)
+
+app.post("/api/products", async (req, res) => {
   const product = req.body; //user will send this data
 
+  //simulating missing fields error
   if (!product.name || !product.price || !product.image) {
     return res
       .status(400)
