@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 
 export const getProducts = async (req, res) => {
   try {
+    //products is a variable that stores the result(products) from Product.find
+    //Product is the Mongoose model imported from product.model.js representing collections in the database
     const products = await Product.find({});
     res.status(200).json({ success: true, data: products });
   } catch (error) {
