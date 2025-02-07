@@ -16,6 +16,6 @@ export const useProductStore = create((set) => ({
       body: JSON.stringify(newProduct),
     });
     const data = await res.json();
-    set((state) => ({ products: [...state.products, data.data] })); //error here
+    set((state) => ({ products: [...state.products, data.data] }));
   },
 }));
