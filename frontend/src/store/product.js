@@ -2,7 +2,7 @@ import { useState } from "react";
 import { create } from "zustand";
 
 export const useProductStore = create((set) => ({
-  products: [], //state variable initialized as an empty array to store ({naem, price, image})
+  products: [], //state variable initialized as an empty array to store ({name, price, image})
 
   setProducts: (products) => set({ products }), //this function takes an array of products as an argument and updates the product state
   //calls set({products}) to overwrite the products state with the new list
