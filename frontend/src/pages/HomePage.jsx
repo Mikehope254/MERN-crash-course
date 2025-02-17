@@ -37,18 +37,20 @@ const HomePage = () => {
             <ProductCard key={products._id} product={products} />
           ))}
         </SimpleGrid>
-        <Text>
-          No Products Found {""}
-          <Link to={"/create"}>
-            <Text
-              as="span"
-              color="blue.500"
-              _hover={{ textDecoration: "underline" }}
-            >
-              Create a Product
-            </Text>
-          </Link>
-        </Text>
+        {products.length === 0 && ( //statement to render this only if no products present
+          <Text>
+            No Products Found {""}
+            <Link to={"/create"}>
+              <Text
+                as="span"
+                color="blue.500"
+                _hover={{ textDecoration: "underline" }}
+              >
+                Create a Product
+              </Text>
+            </Link>
+          </Text>
+        )}
       </VStack>
     </Container>
   );
