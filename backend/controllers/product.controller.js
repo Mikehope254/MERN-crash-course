@@ -37,9 +37,9 @@ export const createProducts = async (req, res) => {
 export const updateProduct = async (req, res) => {
   const { id } = req.params;
   const product = req.body;
-
+  
+//to check if input is valid MongoDB ObjectID
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    //to check if input is valid MongoDB ObjectID
     return res
       .status(404)
       .json({ success: false, message: "Invalid Product Id" });
@@ -56,9 +56,9 @@ export const updateProduct = async (req, res) => {
 
 export const deleteProduct = async (req, res) => {
   const { id } = req.params;
-
+  
+//to check if input is valid MongoDB ObjectID
   if (!mongoose.Types.ObjectId.isValid(id)) {
-    //to check if input is valid MongoDB ObjectID
     return res
       .status(404)
       .json({ success: false, message: "Invalid Product Id" });
